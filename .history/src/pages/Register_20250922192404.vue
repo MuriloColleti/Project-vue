@@ -50,7 +50,6 @@
 </template>
 
 <script setup>
-//defineOptions({ name: 'UserRegister' })
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 

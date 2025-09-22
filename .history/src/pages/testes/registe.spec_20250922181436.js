@@ -2,22 +2,6 @@ import { mount } from '@vue/test-utils'
 import Register from '../Register.vue'
 import { describe, it, expect } from 'vitest'
 
-globalThis.localStorage = {
-  store: {},
-  getItem(key) {
-    return this.store[key] || null
-  },
-  setItem(key, value) {
-    this.store[key] = value.toString()
-  },
-  removeItem(key) {
-    delete this.store[key]
-  },
-  clear() {
-    this.store = {}
-  },
-}
-
 describe('Register.vue', () => {
   it('registra um novo usuario', async () => {
     localStorage.clear()
@@ -31,7 +15,7 @@ describe('Register.vue', () => {
     await wrapper.vm.$nextTick()
 
     const users = JSON.parse(localStorage.getItem('users'))
-
+    // Verifica se existe o usuário testado
     expect(
       users.some(
         (u) =>

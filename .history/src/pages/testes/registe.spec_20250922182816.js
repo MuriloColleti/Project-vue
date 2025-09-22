@@ -2,6 +2,8 @@ import { mount } from '@vue/test-utils'
 import Register from '../Register.vue'
 import { describe, it, expect } from 'vitest'
 
+console.log('Ambiente:', typeof document !== 'undefined' ? 'jsdom' : 'node')
+
 globalThis.localStorage = {
   store: {},
   getItem(key) {

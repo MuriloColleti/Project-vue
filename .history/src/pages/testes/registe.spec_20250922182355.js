@@ -4,18 +4,10 @@ import { describe, it, expect } from 'vitest'
 
 globalThis.localStorage = {
   store: {},
-  getItem(key) {
-    return this.store[key] || null
-  },
-  setItem(key, value) {
-    this.store[key] = value.toString()
-  },
-  removeItem(key) {
-    delete this.store[key]
-  },
-  clear() {
-    this.store = {}
-  },
+  getItem(key) { return this.store[key] || null },
+  setItem(key, value) { this.store[key] = value.toString() },
+  removeItem(key) { delete this.store[key] },
+  clear() { this.store = {} }
 }
 
 describe('Register.vue', () => {

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Register from '../Register.vue'
+import Register from '@/pages/Register.vue'
 import { describe, it, expect } from 'vitest'
 
 globalThis.localStorage = {

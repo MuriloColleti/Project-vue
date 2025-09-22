@@ -1,7 +1,4 @@
-import { mount } from '@vue/test-utils'
-import Register from '../Register.vue'
-import { describe, it, expect } from 'vitest'
-
+// Mock do localStorage para ambiente de teste Node
 globalThis.localStorage = {
   store: {},
   getItem(key) {
@@ -17,6 +14,9 @@ globalThis.localStorage = {
     this.store = {}
   },
 }
+import { mount } from '@vue/test-utils'
+import Register from '../Register.vue'
+import { describe, it, expect } from 'vitest'
 
 describe('Register.vue', () => {
   it('registra um novo usuario', async () => {

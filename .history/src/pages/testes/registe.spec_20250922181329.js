@@ -2,25 +2,9 @@ import { mount } from '@vue/test-utils'
 import Register from '../Register.vue'
 import { describe, it, expect } from 'vitest'
 
-globalThis.localStorage = {
-  store: {},
-  getItem(key) {
-    return this.store[key] || null
-  },
-  setItem(key, value) {
-    this.store[key] = value.toString()
-  },
-  removeItem(key) {
-    delete this.store[key]
-  },
-  clear() {
-    this.store = {}
-  },
-}
-
 describe('Register.vue', () => {
   it('registra um novo usuario', async () => {
-    localStorage.clear()
+    localStorage.cela
 
     const wrapper = mount(Register)
     await wrapper.find('#newUsername').setValue('testuser')
@@ -31,14 +15,8 @@ describe('Register.vue', () => {
     await wrapper.vm.$nextTick()
 
     const users = JSON.parse(localStorage.getItem('users'))
-
-    expect(
-      users.some(
-        (u) =>
-          u.username === 'testuser' &&
-          u.password === 'password123' &&
-          u.email === 'testuser.@example.com',
-      ),
-    ).toBe(true)
+    expect(users).toEqual([
+      { username: 'testuser', password: 'password123', email: 'testuser.@example.com' },
+    ])
   })
 })
