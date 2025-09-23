@@ -15,10 +15,10 @@ export default defineConfig({
     globals: true,
     include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
     deps: {
-      inline: ['vue'],
+      inline: ['vue']
     },
     transformMode: {
-      web: [/\.[jt]sx$/],
-    },
+      web: [/\.[jt]sx$/]
+    }
   },
 })

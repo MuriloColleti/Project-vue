@@ -1,12 +1,4 @@
 <template>
-  <header class="container mt-3">
-    <div class="d-flex justify-content-end gap-2">
-      <router-link to="/login" class="btn btn-outline-primary btn-sm"
-        >Voltar para login</router-link
-      >
-      <router-link to="/" class="btn btn-outline-secondary btn-sm">Home</router-link>
-    </div>
-  </header>
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -48,6 +40,8 @@
             </form>
             <div v-if="registerError" class="alert alert-danger mt-3">{{ registerError }}</div>
             <div v-if="registerSuccess" class="alert alert-success mt-3">{{ registerSuccess }}</div>
+            <router-link to="/login" class="btn btn-link w-100 mt-3">Voltar para login</router-link>
+            <router-link to="/" class="btn btn-link w-100">Home</router-link>
           </div>
         </div>
       </div>

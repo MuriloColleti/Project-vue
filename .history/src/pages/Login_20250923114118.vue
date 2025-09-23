@@ -1,12 +1,4 @@
 <template>
-  <header class="container mt-3">
-    <div class="d-flex justify-content-end gap-2">
-      <router-link to="/register" class="btn btn-outline-success btn-sm"
-        >Registrar novo usuário</router-link
-      >
-      <router-link to="/" class="btn btn-outline-secondary btn-sm">Home</router-link>
-    </div>
-  </header>
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -31,6 +23,10 @@
               <button type="submit" class="btn btn-primary w-100">Entrar</button>
             </form>
             <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
+            <router-link to="/register" class="btn btn-link w-100 mt-3"
+              >Registrar novo usuário</router-link
+            >
+            <router-link to="/" class="btn btn-link w-100">Home</router-link>
           </div>
         </div>
       </div>
@@ -53,7 +49,7 @@ function getUsers() {
   if (users) {
     return JSON.parse(users)
   }
-
+  // Usuário padrão caso não exista nada salvo
   return [{ id: 1, username: 'admin', email: 'admin@email.com', password: '1234' }]
 }
 

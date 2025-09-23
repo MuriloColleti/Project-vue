@@ -24,7 +24,7 @@ beforeEach(() => {
   // Define o mock do localStorage
   Object.defineProperty(window, 'localStorage', {
     value: mockStorage,
-    writable: true,
+    writable: true
   })
 })
 

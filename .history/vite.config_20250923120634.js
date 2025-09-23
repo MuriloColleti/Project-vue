@@ -14,11 +14,5 @@ export default defineConfig({
     setupFiles: ['./vitest.setup.js'],
     globals: true,
     include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
-    deps: {
-      inline: ['vue'],
-    },
-    transformMode: {
-      web: [/\.[jt]sx$/],
-    },
   },
 })
